@@ -5,6 +5,9 @@ function Profile({ data }) {
     <div>
       <h1>Data id: {data.id}</h1>
       <p>Data content: {data.content}</p>
+      <button>
+        <a href="/api/auth/logout">Logout</a>
+      </button>
     </div>
   )
 }

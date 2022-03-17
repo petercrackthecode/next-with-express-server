@@ -1,6 +1,8 @@
 const express = require("express")
 const next = require("next")
-
+const backendRouter = require("./routes/index.js")
+/* It's loading the .env file and making the variables available to the rest of the application. */
+require("dotenv").config()
 const PORT = process.env.PORT || 3000
 const dev = process.env.NODE_ENV !== "production"
 const app = next({ dev })
@@ -10,7 +12,6 @@ app
   .prepare()
   .then(() => {
     const server = express()
-    const backendRouter = require("./routes/index.js")
 
     server.use("/api", backendRouter)
 
