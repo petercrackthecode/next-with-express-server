@@ -1,4 +1,5 @@
 import { withPageAuthRequired } from "@auth0/nextjs-auth0"
+import Link from "next/link"
 
 function Profile({ data }) {
   return (
@@ -6,7 +7,7 @@ function Profile({ data }) {
       <h1>Data id: {data.id}</h1>
       <p>Data content: {data.content}</p>
       <button>
-        <a href="/api/auth/logout">Logout</a>
+        <Link href="/api/auth/logout">Logout</Link>
       </button>
     </div>
   )
